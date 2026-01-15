@@ -2,7 +2,7 @@
 nixPkgs = ["python311", "gcc", "python311Packages.pip"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt --break-system-packages"]
+cmds = ["cd /app && pip install -r requirements.txt --break-system-packages"]
 
 [start]
-cmd = "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = "cd /app && python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
